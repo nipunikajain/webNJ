@@ -1,0 +1,120 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set the html and body to at least the height of the viewport */
+html, body {
+    height: 100%; /* Set html to 100% height to base the body's min-height off the viewport */
+    min-height: 100%; /* Ensure the body is at least the viewport's height */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+/* Intro section with image and text */
+#intro p {
+    font-size: 1.2rem;
+    color: #fff;
+    /* Animation properties */
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+}
+
+/* Keyframes for fadeIn animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Apply background to body with blur effect */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    display: flex; /* Use flexbox to allow child elements to expand */
+    flex-direction: column; /* Stack children vertically */
+    position: relative; /* Needed for absolute positioning of pseudo-elements */
+}
+
+/* The pseudo-element for the blurred background */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: url('images/background.jpeg') no-repeat center center/cover;
+    filter: blur(8px); /* Blur effect */
+}
+
+/* Intro section with image and text */
+#intro {
+    text-align: center;
+    padding: 2rem;
+    position: relative; /* Ensure it's above the pseudo-element */
+}
+
+#intro img {
+    width: 300px; /* Width of the image */
+    height: 300px; /* Height of the image, set to the same value for a circle */
+    object-fit: cover;
+    object-position: center; /* Adjust this value if needed to center your face */
+    border-radius: 50%; /* This will make the square image round */
+    display: block;
+    margin: 100px auto 0; /* Adjust top margin as necessary */
+}
+
+
+#intro h1, #intro p {
+    color: #fff; /* Ensures text is white */
+    position: relative; /* Ensures text is above the pseudo-element */
+    z-index: 2; /* Higher z-index to be on top of the blurred background */
+}
+
+/* Header styles */
+header {
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    position: relative; /* Ensure it's above the pseudo-element */
+    z-index: 2;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0; /* Remove padding */
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Ensure main content takes up the available space */
+main {
+    flex: 1;
+    padding: 2rem;
+    position: relative; /* Ensure it's above the pseudo-element */
+    z-index: 2;
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative; /* Ensure it's above the pseudo-element */
+    z-index: 2;
+}
