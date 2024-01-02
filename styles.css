@@ -1,4 +1,6 @@
 /* Basic Reset */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -31,9 +33,10 @@ html, body {
     to { opacity: 1; }
 }
 
+
 /* Apply background to body with blur effect */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Raleway', sans-serif;
     line-height: 1.6;
     display: flex; /* Use flexbox to allow child elements to expand */
     flex-direction: column; /* Stack children vertically */
@@ -61,8 +64,8 @@ body::before {
 }
 
 #intro img {
-    width: 300px; /* Width of the image */
-    height: 300px; /* Height of the image, set to the same value for a circle */
+    width: 250px; /* Width of the image */
+    height: 250px; /* Height of the image, set to the same value for a circle */
     object-fit: cover;
     object-position: center; /* Adjust this value if needed to center your face */
     border-radius: 50%; /* This will make the square image round */
