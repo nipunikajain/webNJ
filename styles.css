@@ -1,110 +1,19 @@
-/* Basic Reset */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Set the html and body to at least the height of the viewport */
-html, body {
-    height: 100%; /* Set html to 100% height to base the body's min-height off the viewport */
-    min-height: 100%; /* Ensure the body is at least the viewport's height */
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* Hide horizontal scrollbar */
-}
-
-/* Apply background to body with blur effect */
-body {
-    font-family: 'Raleway', sans-serif;
-    line-height: 1.6;
-    display: flex; /* Use flexbox to allow child elements to expand */
-    flex-direction: column; /* Stack children vertically */
-    position: relative; /* Needed for absolute positioning of pseudo-elements */
-    min-height: 100vh;
-}
-
-/* The pseudo-element for the blurred background */
-body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    background: url('images/background.jpeg') no-repeat center center/cover;
-    filter: blur(8px); /* Blur effect */
-}
-
-/* Intro section with image and text */
 #intro {
     text-align: center;
-    padding: 2rem;
-    position: relative; /* Ensure it's above the pseudo-element */
+    padding: 50px 20px;
+    background-size: cover;
+    color: #fff; /* Adjust based on your background */
 }
 
-#intro img {
-    width: 250px; /* Width of the image */
-    height: 250px; /* Height of the image, set to the same value for a circle */
-    object-fit: cover;
-    object-position: center; /* Adjust this value if needed to center your face */
-    border-radius: 50%; /* This will make the square image round */
-    display: block;
-    margin: 100px auto 0; /* Adjust top margin as necessary */
+.profile-picture {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    /* Other styling */
 }
 
-#intro h1, #intro p {
-    color: #fff; /* Ensures text is white */
-    position: relative; /* Ensures text is above the pseudo-element */
-    z-index: 2; /* Higher z-index to be on top of the blurred background */
+.tagline {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
-
-/* Keyframes for fadeIn animation */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* Header styles */
-header {
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    color: #fff;
-    padding: 1rem 0;
-    text-align: center;
-    position: relative; /* Ensure it's above the pseudo-element */
-    z-index: 2;
-}
-
-main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* This will distribute the space */
-    padding: 2rem;
-}
-
-footer {
-    margin-top: 50px; /* Or add margin to the top of the footer */
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0; /* Remove padding */
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none
